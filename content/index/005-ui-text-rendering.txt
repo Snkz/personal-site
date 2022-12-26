@@ -1,0 +1,14 @@
+April 30 2016:
+UI and text rendering woes
+
+<strong>Work work work,</strong>  but I've made some time to look at the engine a bit more.
+
+So I've been looking at performance and started measuring specific parts of the rendering pipeline. I haven't been getting good FPS lately and I mostly assumed it was due to the voxel code, hence all the threading work. What I forgot to pay attention to was the text rendering code I slapped in! It alone took up two thirds of my rendering time! It obviously needed to go!
+
+I've been using FreeType <a href="https://en.wikibooks.org/wiki/OpenGL_Programming/Modern_OpenGL_Tutorial_Text_Rendering_01"/> following this very helpful guide</a> which got me to a point where I could simply write text to the screen. However due to the lack of caching and constant texture generation, my FPS took a serious hit. At the time, I was still at 60FPS (I normally have vsync on blah) so it went unnoticed and performance was not my first priority.
+
+I had the option of figuring out how to improve on this or move away from it entirely and finally start looking at some UI libs. I decided to go with the latter and have started using <a href="https://github.com/ocornut/imgui">ImGui</a> a very self contained library that does basically everything  I need currently. My FPS on my windows machine is now at something ridiculous like 1200FPS in top down view and around 500FPS in free cam.
+
+<a class="special" href="https://www.youtube.com/watch?v=VKBHxDioHi0">You can view the UI Demo here.</a>
+
+Obviously I'm pretty happy with the switch, I'm not too sure how practical this lib will be in the long run but I'm tempted to find out :p

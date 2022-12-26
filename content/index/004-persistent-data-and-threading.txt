@@ -1,0 +1,28 @@
+January 3 2016:
+Persistent Data && Threading Opts
+
+So as you may of noticed, I took a bit of a break due to the new job. Work is exciting and consuming 110% of my time but since I've been on break, I obviously took the time to tackle more of the game.
+
+So although I did do most of the multithreading work in July, I did not take the time to debug it thourghly or truly break down all work to be exclusively local to chunks. i.e lighting was not threaded. More importantly, rendering required all threads to stop before I could render out a chunk. I ran the risk of corrupting data being bound to the gpu. Fortunately I banged my head against my keyboard to sort that out using the minimal amount of blocking code. Threads no longer need to be barrier synchornized while I write to GPU memory.
+
+The solution mostly boiled to keeping two states, the currently bound state of the chunk, and the current active state of the chunk. I maintained seperate values for things such as block count, x,y,z regions start and length in the buffer etc. One for the version that is currently bound to gpu memory and one for the version that is not. This does not mean chunk data was duplicated 100% of the time, it just means the vertex data thats normally just on the gpu and sometimes on the stack was kept around longer then before and was only cleared at the time of the next glBindBuffer call. When that call is made I copy the current state synchronisly (just few integers needed) and release locks allowing any thread to attempt to reupdate the vertex data if need be. This allows me to render and recreate meshes at the same time. 
+                  
+Lighting basically required a rewrite of the floodfill algorithm which I originally got from <a href="https://www.seedofandromeda.com/blogs/29-fast-flood-fill-lighting-in-a-blocky-voxel-game-pt-1">the guys making Seed of Andromeda</a>. The change mostly revolved around the addition of a lock and local queues.
+
+<a class="special" href="https://www.youtube.com/watch?v=Lh4m8PMbS7E">I made a quick demo earlier to demonstrate that portion of the update.</a>
+
+After feeling pretty confident about my threading skills I decided to crush that confidence by attempting to thread reading/writing chunks.I did manage to get this all working but my self-esteem did not hold out unfortunately. Currently I am writing out each chunk to its own file based on it's position. Since I reuse chunks as I move around the world, assigning a chunk an id and using that as the file name is not helpful. Position's worked fine as long as I made sure to synchronize read and writes to a chunk file. Otherwise I run the risk of overwriting file with chunk data of chunk that was recently reassigned the conflict creating position.
+                  
+The synchronization between the update calls and the read/write calls was mostly a freebie due to how I organized chunks that required unloading. If a chunk is in the unloading queue, it cannot be repositioned or put into the update queue. Only chunks stored in a free queue can be reinited.
+                  
+Thanks to SDL's <span class="code inline">SDL_GetPrefPath(orgname, dirname)</span> function, there was very little os specific code necessary.That call provided the correct directory to write to, the only extra work was making a safe mkdir call which I did like so.
+
+<p class="code">int mkdir_safe(const char* path) {<br/>#ifdef __linux__<br/>&nbsp;&nbsp;return mkdir(path, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);<br/>#else<br/>&nbsp;&nbsp;return mkdir(path);<br/>#endif<br/>}</p>
+
+Please excuse the laziness, ideally the #ifdef would be defined for windows and default to the posix mkdir call, however I did not want to enumerate the possible windows/windows compiler flags
+
+Finally a point on the format, currently i'm writing out the chunk byte for byte, so each chunk file is always 32KB. I intend to run encode the files shortly. The next step will be to organize multiple chunks into a single file, ala minecrafts region files. I do not envision that being too complicated given the right amount of synchronization.
+
+<strong> BUT OMG IT WORKS!!! </strong>
+
+Yea persistence, woo! The next thing I'd like to tackle is building out an entity/component system. Work has inspired me to build out a proper game engine. Having a clear separation between engine and game code at work allows everyone to make a tremendous amount of change on the fly. I really want that. I will have it!

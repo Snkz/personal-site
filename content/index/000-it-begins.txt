@@ -1,0 +1,19 @@
+June 28 2015:
+It begins...
+
+
+So I've started working on my third attempt to make a game outof my voxel engine. I believe in this one alot so I'm going to start documenting some of its developement.
+
+I'm making a voxel space shooter crossed with megaman. Think megaman bosses but in space and with destructiable bodies. 
+
+Destructiable enviornments are pretty straightforward in a voxel engine, the volume data for an enviornment is static so intersections are pretty trivial. Chunks are generally axis alligned too, meaning no funky transformations are needed to check point collisions. My engine currently organizes fixed sized chunks in a octree, so when I want to shoot one of my asteriods I query the octree picking up chunks along the ray as I pass em and tracing through them to look for collisions. 
+
+But what happens when these chunks are rotating around and moving? For my voxelized enemies this will be pretty common so my first task was to sort out intersections with arbitrary positioned/alligned chunks. My current soloution, like most raytracing renders (mine is not fyi) is to transform any ray into the chunks object space. This can be done my multiplying the incoming ray by the inverse of that chunks model matrix (its translations, rotations etc.) and checking to see if the ray crosses then. Its a simple trick and solves my problem.
+
+I use this trick as well to determine which faces of the enemy to render. I transform the cameras position into the enemy chunks object space which allows me to simply check to see if the camera is infront of or behind a voxel face using the extents of the chunk. This would not of been possible in world space where a face could of been unalligned with the axes.
+
+<br />
+<a class="special" href="https://www.youtube.com/watch?v=iXLHjo1UnwM">I've uploaded a demo video to show how it works.</a>
+<br />
+
+Hopefully I'll have more to show you in the future. 

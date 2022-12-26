@@ -1,0 +1,29 @@
+July 10 2015:
+Voxel Segmentation
+
+I've been working on how enemies should be fought in my game and I've decided that in order to best take advantage of the engine, enemies should die by being broken apart. i.e whenever an enemies body becomes disjoint, all or one disjoint set of their body should be destroyed. Sounds fun buuuut its been a pain getting in order. This post will discuss what I've learned about set segmentation for voxel data.
+
+First my assumptions: <br/> 1. Enemy starts off completely connected <br/> 2. Enemy loses at most one voxel at a time <br/> 3. Diagonal voxels are not considered connected
+
+Nothing crazy but should be stated. With this I began building out a soloution. I initially came to the conclusion that the only way a set could ever become disjoint is if the voxel currently being removed was one of only three voxels in a neighbourhood around the voxel. The idea was, if we assume up untill this point that the enemy was fully connected (i.e there exists a curve in between any two points on the enemy such that every point on this curve is contained in a voxel of the enemy) then removing a single voxel is only destructive if it was the only point between it and its two neighbours!
+
+So now the problem became this: If a voxel that just got removed fit the above description, it being one of three voxels in a neighbourhood. How do I know if it created a disjoint set? How do I know that there doesn't exist another path between the two voxels neighbouring this guy that I just orphaned?
+
+<strong> Does there exist another path between these two voxels? </strong>
+
+Sounds like a path finding problem, sounds like I'm writing A*. 
+
+
+<a class="special" href="https://www.youtube.com/watch?v=OZTb1lvjVAM&feature=youtu.be">So I did this.</a>
+
+
+Attached is a video of it in action. After determining if removing a voxel creates two disjoints sets. I flood fill the two sets using the orphaned points as seeds and paint them red or blue. Since my player character deletes multiple voxels at a time, when a disjoint set happens to be small, it may be deleted immediately by the characters missile. Hence the case where the enemy is painted fully blue or red.
+
+
+Seems to work right? WRONG!
+
+You may of guessed this but the assumption of there being only two orphaned neighbours possible is based on the assumption that removing a voxel can create at most two disjoint sets. This is incorrect. At most 6 orphaned neighbours are possible creating 6 disjoint sets IF the removed voxel was say the center of some star like enemy. Imagine 1x1 path shooting out of every face of this to-be-removed voxel. The set was originally connected, however this one little piece was holding it all together. A* on just two voxels is not enough ... 
+
+I'll post an update when I sort this out. 
+
+In other news I have lua bindings now wooot :p, ill do an update on that too!

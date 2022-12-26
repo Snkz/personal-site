@@ -1,0 +1,15 @@
+Summer 2015:
+
+<a href="index.html">I intend to start blogging .. i guess i'll need a way to update content without messing with HTML now</a>
+<a href="https://nicolasgoles.com/blog/2013/01/lua-tutorial-c-bindings/">Light overview on C Lua bindings. Its real easy</a>
+<a href="http://www.lua.org/pil/25.html">Official Lua docs</a>
+<a href="http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-16-shadow-mapping/">Shadow Mapping doesn't seem so bad...</a>
+<a href="http://pgl.yoyo.org/luai/i/lua_remove">No bs list of lua api functions</a>
+<a href="http://gafferongames.com/game-physics/physics-in-3d/">This guy is making me rethink alot of things about enemy movement...</a>
+<a href="http://gamedev.stackexchange.com/questions/651/tips-for-writing-the-main-game-loop/656#656">Game loops aren't trivial and this stackover flow post has some great resources explaining why.</a>
+<br/>
+
+Building out my game, lua and lighting. I guess physics too
+<br/>
+
+I will complete this project. Its too interesting to stop.

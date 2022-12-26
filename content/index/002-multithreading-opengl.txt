@@ -1,0 +1,24 @@
+July 16 2015:
+Multithreading in OpenGL
+
+So whenever I read posts by voxel engine writters that list features they've implemented, Multithreading is almost always listed as a simple bullet point. They then go on to talk about meshing problems, LOD etc. There's very little discussion on how they implented it. I'm gonna try to change that cause damn does it ever suck to multithread code with OpenGL being single thread only. 
+                  
+So I lied a bit, OpenGL does support multithreading with shared contexts but as far as I can tell, the API to do it is windowing system specific, i.e OS specific. This wasn't really a path I wanted to go down. Thankfully, its not that big of deal, it just lead to a very important condition that I needed to mantain.
+
+<strong> ALL glXXXXX Methods must happen on thread that inited the context!</strong>
+
+This was a bit unfortunate, I was originally planning on threading my mesh generation code directly, i,e no changes to its implementation. It originally created a fixed size buffer on the stack and stored all the mesh vertecies. This was then immediately bound to a chunks VBO and discarded when the function returned. The last step, binding to the VBO would not be possible anymore if this were running in a seperate thread. This ment that the mesh could not be stored on the stack, which then lead to the abstraction of the mesh and heap allocation for its storage. The code was updated so that the chunk had a reference to a mesh object, it would write to it when the mesh generation function was called and cleared after the main thread bound its data to a VBO.
+
+Now in order to define what work a thread would do and what the thread would do after its completion. I created a threadPool class with two queues. A workQueue and a responseQueue. The workQueue would take a task structure which contained data to be worked on and a C++ lambda function (yea! lambdas!) to execute on this data. The responseQueue would take the result of the lambda function. The two queues would be synchronized with their own mutex and wait channel. I'm actually very proud of this threadPool class, I'll be posting it on github soon, its just a header and it provides basically everything I need for controlling the threadPools work flow, pausing work, adding work etc.
+
+So when it comes time to render the scene, I pause all active threads and I drain the responseQueue of its completed meshes, binding them all. I compute visible chunks and for any chunks that need updating, I push it on to the queue with a lambda function executing its mesh generation method. After the scene is rendered I resume all threads! Boom multithreading!
+
+... Except for the work order. So if you were to just keep pushing chunks that needed updating onto the queue, your worker threads would not be able to keep up, causing them to continue to work on chunks that arent visible to the player anymore. You could use a stack instead of a queue to deal with this issue. On top of work order, at least for me, I had issues where the same chunk was on the workQueue multiple times. I do not do any checking to see if the chunk exists in the queue or if it still needs updating. I prefered to just wipe the workQueue during the pause and drain response phase and mantain the queues FIFO ordering instead.
+
+After getting all that sorted out, I gained level of detail for free. I can set the 'sample' rate in my mesh generator (It just sets the increment step in the various for loops) based on distance away from the player and push the chunk on to the workQueue if the sample rate changed. 
+
+Of course, this leads to issues in areas where chunks at different LOD meet. I got around this by extending each chunks mesh by one sample step. It works pretty well, there's still times where holes are visible but I enjoy the effect enough to not care.
+
+<a class="special" href="https://youtu.be/XT_NXsXkkMI">Here's a vid of it.</a>
+
+I swear I'll get back to the game part of this reaaalll soon.
