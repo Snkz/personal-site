@@ -39,16 +39,15 @@ body {
 
 #icon { 
   float: left;
-  background-color: #0000AA; 
-  width: 100px; height: 100px; 
+  width: 128px; height: 128px; 
   padding-left: 20px; 
-  margin-left: 48px; 
+  margin-left: 20px; 
 } 
 
 #side { 
   clear: left; 
   width: 168px; 
-  margin: 0px 0px -1000px 0px; 
+  margin: 0px 0px -1000px 8px; 
   float: left; 
   padding-bottom: 1000px;
 }
@@ -112,11 +111,21 @@ body {
 }
 
 #ratepicker { 
-  margin: 0px 10px 0px 10px; 
+  margin: 0px 10px 0px 28px; 
   -moz-user-select: none; 
   -webkit-user-select: none; 
   -ms-user-select:none;
   user-select:none;
+}
+
+#currate { 
+  text-align: right; 
+  display: inline-block; 
+  font-size: 8px; 
+  margin: 0px 0px 0px 0px; 
+  padding: 0px 8px 0px 0px; 
+  width: 132px; 
+  cursor: default;
 }
 
 ul li { 

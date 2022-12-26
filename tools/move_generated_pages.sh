@@ -1,4 +1,4 @@
-generated_path=~/git/basic-site-template/generated
+generated_path=~/git/personal-site/generated
 destination_path=/var/www/tests
 destination_server=dahir.ca
 
