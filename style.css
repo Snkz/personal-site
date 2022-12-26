@@ -111,20 +111,20 @@ body {
 }
 
 #ratepicker { 
-  margin: 0px 10px 0px 28px; 
   -moz-user-select: none; 
   -webkit-user-select: none; 
   -ms-user-select:none;
   user-select:none;
+  width: 168px; 
+  padding: 0px 8px 0px 0px; 
 }
 
 #currate { 
   text-align: right; 
   display: inline-block; 
   font-size: 8px; 
-  margin: 0px 0px 0px 0px; 
-  padding: 0px 8px 0px 0px; 
-  width: 132px; 
+  padding: 1px 8px 0px 0px; 
+  width: 160px; 
   cursor: default;
 }
 
