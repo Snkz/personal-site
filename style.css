@@ -39,7 +39,8 @@ body {
 
 #icon { 
   float: left;
-  width: 128px; height: 128px; 
+  width: 128px; 
+  height: 128px; 
   padding-left: 20px; 
   margin-left: 20px; 
 } 
