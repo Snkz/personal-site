@@ -1,7 +1,7 @@
-August 21 2023:
+Nov 18 2023:
 Depth and Effects
 
-Recently I did some work on my effects system and produced this: <a class="special" href="">a fake rimlight and trail effect when dashing</a>. I'd like to talk a bit about what I did to get that up. Mostly so I can remember and who knows maybe it'll be helpful for you.
+Recently I did some work on my effects system and produced this:<a class="special" href="">a fake rimlight and trail effect when dashing</a>. I'd like to talk a bit about what I did to get that up. Mostly so I can remember and who knows maybe it'll be helpful for you.
 
 The effect system for now just takes requests and does an additional render for each request into different render textures (colour AND depth swapped out) using the scene pass' framebuffer. The shader program and framebuffer are unchanged, its literally just another write to different texture targets, with additional uniforms passed in. The textures are all stored on each requesting entities, they are later combined with additional render passes.
 
@@ -12,7 +12,7 @@ First the effects texture is built by processing each models effects texture ind
 Second the model textures are built by taking the model pass and apply data from these effects. The texture colour data is read and whenever the effect texture has data, its is placed on top. To ensure effect data stays rendered at the correct depth as well, the models depth data is made writable and data is written when appropiate. If theres effects data present and the model has no data, its depth is used and stored in the models depth.
 
 This process of updating depth data while reading it is made possible by this patten.
-<p class="code"><br/>glEnable(GL_DEPTH_TEST);<br/>glDepthMask(true);<br/>glDepthFunc(GL_ALWAYS);<br/></p>
+<p class="code">glEnable(GL_DEPTH_TEST);<br/>glDepthMask(true);<br/>glDepthFunc(GL_ALWAYS);<br/></p>
 Its important the depth test pass is active so writes are available but the testing function is always set to pass, allowing us to look at all fragaments.
 
 Finally the composite unit texture is built, taking all the model textures and applying them to one final texture that will eventually be pasted on top of the scene. We use the depth data for all models in order to determine when one fragment should be overriden by another. This means the order we process models does not matter for the final unit texture.
