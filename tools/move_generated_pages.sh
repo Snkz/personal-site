@@ -105,7 +105,6 @@ done
 #fi
 
 if [ -f "style.css" ]; then
-  #scp "style.css" "${username}@${server}:${destination}/";
   curl --insecure --user ${username}:${password} -T "style.css" sftp://"${server}/${destination}/style.css";
 fi
 

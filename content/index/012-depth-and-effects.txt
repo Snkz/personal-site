@@ -1,7 +1,7 @@
 Nov 18 2023:
 Depth and Effects
 
-Recently I did some work on my effects system and produced this:<a class="special" href="">a fake rimlight and trail effect when dashing</a>. I'd like to talk a bit about what I did to get that up. Mostly so I can remember and who knows maybe it'll be helpful for you.
+Recently I did some work on my effects system and produced this:<a class="special" href="">a fake rimlight and trail effect when dashing</a>. I'd like to talk a bit about what I did to get that up.
 
 The effect system for now just takes requests and does an additional render for each request into different render textures (colour AND depth swapped out) using the scene pass' framebuffer. The shader program and framebuffer are unchanged, its literally just another write to different texture targets, with additional uniforms passed in. The textures are all stored on each requesting entities, they are later combined with additional render passes.
 
@@ -19,4 +19,4 @@ Finally the composite unit texture is built, taking all the model textures and a
 
 These seperate passes allow a ton of flexibility that we would not be able to get by simply writing to the final scene buffer immediately at the cost of multiple writes. Gameplay can effect rendering independalty of the render system knowing about every gameplay element. The effect system is made responsbile for dealing with gameplay alone and how to itterate on effects is made independant of the broader rendering system which is nice for ... future me.
 
-Hopefully this post is also cause it took me too long to organize this!
+I'm very happy with the setup, what I want to do next is scene transition effects which means more post processing fun! I'm looking to thinks like pokemon for inspiration.

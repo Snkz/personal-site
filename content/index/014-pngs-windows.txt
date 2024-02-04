@@ -1,0 +1,20 @@
+Feb 4 2024:
+PNG to texture
+
+I looked into getting png loads and finally managed to get some stuff done for it.
+
+As usual its a little trickier then expected, first png reading is not super free. Reading the format is annoying so looking into a crossplatform library was needed. Thankfully we had something simple that i could link statically, libpng! Using the same mingw crossplatform complilation I updated my makefiles to build in libpng 
+
+<p class="code">LDLIBS = --static `/usr/bin/x86_64-w64-mingw32-sdl2-config  --static-libs` -ldWHATEVER_OTHER_LIBS -lpng -lz </p>
+
+Note the ordering and the presence of -lz, the zlib compression lib needed for libpng. This turned out to be neccasary for linking to happen.
+
+Once compiled in, reading the png data also turned out to be trickier then expected. libpng has a pretty obtuse API but thanks to <a href="https://gist.github.com/FreeCX/4946105"> FreeCX help here </a> using the library was not too painful.
+
+Finally the bit that actually matters, storing the png data into a texture and just keeping a handle to it was done. With an update to the final shader pass I was able to load a glorius png into the <a href="textures/background.png">background</a>. 
+
+Unfortunately this still did not run on windows, the final gotcha was within the calls to read files. A problem I've managed to run into every time and forget, never forget to specify exactly how to read non text files!! <p class="code">fopen(file, "rb")</p> vs <p class="code">fopen(file, "r")</p> where neccasary.
+
+With this setup, im hoping to load in larger texture sheets for UI/UX elements... the current engine has so many floating texture handles now I'm extremly curious when I'm going to blow up gpu memory, how many bound textures is too many...
+
+Either way, we move on
