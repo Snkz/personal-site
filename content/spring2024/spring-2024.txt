@@ -1,0 +1,9 @@
+Spring 2024:
+
+<a href="https://guilhermesimoes.github.io/blog/shaders-case-study-pokemon-battles-part-2">Thanks for the transition pngs</a>
+<a href="https://ogldev.org/">kinda handy opengl resource</a>
+
+<br/>
+Change... 
+<br/>
+No fear just go!

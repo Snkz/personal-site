@@ -10,6 +10,7 @@ links
   <a href="summer2021.html"> summer 2021 </a>
   <a href="winter2022.html"> winter 2022 </a>
   <a href="winter2023.html"> winter 2023 </a>
+  <a href="spring2024.html"> spring 2024 </a>
 
 on the ground
   <del>tdot: bahen center </del>
