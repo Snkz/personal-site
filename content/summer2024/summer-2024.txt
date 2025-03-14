@@ -1,0 +1,14 @@
+Summer 2024:
+
+Billboarding summer
+
+<a href="https://archive.org/details/GDC2013Love">Diablo VFX talk, thanks Sean</a>
+<a href="http://gaarlicbread.com/post/gl_2d_array">Texture3D and texture atlases</a>
+<a href="https://android.googlesource.com/platform/external/libpng/+/refs/heads/android-s-beta-5/example.c"> Libpng </a>
+<a href="https://easings.net/"> Visual rep of easing funcs </a>
+
+There was a vid about blending textures that I can no longer find, thanks for the free textures though
+
+<br/>
+Attack Attack Attack!
+<br/>

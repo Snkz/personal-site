@@ -1,0 +1,43 @@
+Aug 5 2024:
+Texture3D, texture atlases and billboards in opengl 2 and glsl 130.
+
+After a few weeks of work, i've been able to succesfully load various png types as textures. This includes the glsl side support for variable number of textures!
+I'd like to go over what that looked like.
+
+First to talk about the issue, pngs themselves have their own set of complications that i'll ignore for now. Just know that libpng is the goat and the examples are generally enough to get you to work out w/e issue.
+
+The goal with this work was to build out a vfx system. This means an arbitrary number of textures and texture atlases would be supplied to an entity and then combined in a unique shader pass to create an effect. These textures would be rendered on screen as billboarded objects, with a position relative to the entity the effect is associated with. The rendered objects are billboarded so the effects can be done entirely in 2D on the supplied textures. When the texture is a texture atlases, only a portion of the supplied texture should be used and that portion should be rendered over the entire billboarded object, as if it were the entire texture.
+
+When it comes to loading a variable number of textures the main issue is being able to bind a variable number of textures to the shader program. Normally textures are bound to named targets such as <p class="code">sampler2d namedTex</p> Then referenced in the program. However when multiple targets are needed, this named method gets unweildy and it becomes difficult to know what bound texture on an entity is needed for what effects. 
+
+This problem is solved with texture arrays. This works as you would expect, instead of binding individual textures to a variable, an array of textures is supplied and then indexed as needed to retrieve the correct texture. However how this is done in opengl 2 is not intutive. We actually need to a special texture target type, a glTexImag3D object!
+
+Essentially an array of 2D textures is treated as multiple 2D textures stacked on top of each other. This method for binding texture 2D arrays appears updated in more moden versions of opengl but heres how it looks in opengl 2.<p class="code>glBindTexture(GL_TEXTURE_2D_ARRAY, texture);
+<br/>glTexImage3D(GL_TEXTURE_2D_ARRAY, 0, GL_RGBA, max_width, *max_height, image_data_array.size(), 0, GL_RGBA, GL_UNSIGNED_BYTE, 0);</p>
+
+And with that we run into the first gotcha, the dimensions of the 3D texture. In order to bind multiple textures to the same 3D texture object, the dimensions of the largest texture must be used for each layer bound. Meaning if the textures for an effect do not all match, padding of that texture will be needed. This can be done in code but will effect the logic for parsing the texture in the shader program as the actual dimensions of the texture will be smaller then what is sent to the gpu.
+
+Once the target type is initialized with the correct dimensions, each layer can now be filled. Thankfully this bit is pretty intuitive. <p class="code>for (size_t i = 0; i < image_data_array.size(); i++)<br/>glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0, 0, 0, i, width, height, 1, alpha, GL_UNSIGNED_BYTE, (GLvoid *) image_data);<br/></p>
+
+Using SubImage we can specificy what layer to bind to and with what dimensions, starting the top left corner and supply our texture data. With that our texture array is filled out and can be handled in glsl with whatever additional attribute and uniform data is needed to manage the texture array. 
+
+For my system, all effects are rendered in a single draw call per entity. It's likely this will need to evolve but for now with sufficient attribute data, this method works well and is what I'll discuss here. Once the texture atlas is bound to glsl, each effect is responsible for supplying the data needed to know what index the texture is at and the number of rows and cols in the texture for the case of texture atlases. This and other information is bound via attribute data and for every effect supplied on the entity, the appropiate attribute data is referenced via the typical glsl pipeline.
+
+For reading the texture atlas, glsl version 130 is required for the following calls:<p class="code>uniform sampler2DArray billboardTex;<br/>vec4 colour = texture(billboardTex, vec3(textureCoord * sub_size, level));<br/></p>
+
+Where textureCoord is a manipulated value based on atlas data, sub_size is the ratio between actual texture dimensions and the dimensions of the bound object and level is index of the texture in the texture array.
+
+This covers most of the tricky opengl bits, the remaning bit of work is the vertex data needed for the billboard object to be drawn and the logic needed for dealing with the atlas. The math for handling the atlas is probably a bit intutive, just understand that width, height, rows and columns are all supplied as attribute data along with the uniform data of max_width and max_height. With that the math can be done to handle finding the portion of the texture that is needed for the current part of the atlas that needs to be drawn. Once found we can also scale the coordinate data when indexing the texture to ensure our fragment data range of 0 - 1 is scaled down to match our smaller section for the atlas.
+
+The more interesting bit is billboarding, as I am using a feature I didn't know existed in opengl, GL_POINTS<p class="code>glEnable(GL_PROGRAM_POINT_SIZE);<br/>glDrawArrays(GL_POINTS, 0, n);<br/></p>
+
+With this, we can supply POINT data in world space and have quads be automatically created around that point. The size of the quad can be controlled on the glsl side with the following logic:<p class="code">gl_Position = p * v * m * vec4(coord.x, coord.y, coord.z, 1.0);<br/>gl_PointSize = data.w;<br/></p>
+
+Now a quad that faces the camera is always drawn with size data.w. Note that this size is in pixels, meaning as the screen zooms in and out, the size of the effect changes. Additional logic is needed to cover this to scale the pixel count up or down with zoom and screen dimensions, a simple trick is to divide data.w by gl_Position.z * some scaler. This will work at most zoom levels relatively fine.
+
+This should now be in place where I can begin writing a more complicated fragment shader to deal with combining textures and other bits needed to create cool effects, my next engine update will hopefully have that working. Check out my twitter for an example of this portion running!
+
+If it makes sense to also, ill talk about png loading and the gotchas there when supplying raw png data of various colour types to opengl in a later blog post.
+
+<br/>
+Hopefully this helps you as this has taken me quite a while to sort out.

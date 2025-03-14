@@ -1,0 +1,21 @@
+Dec 31 2024:
+Year End and Fishy game
+
+I've finally put something out! A little fishing game built with the tools and engine I've been building for like 10 years.
+What a great feeling, but from my posts and tweets its probably a bit random no? Well let me say a bit about how this came to be.
+
+At the start of the year I had the goal of leveraging "community" power to get myself to complete more work. With that in mind; I set up a weekly work session thing with a friend that really came in clutch this year. I managed to maintain a healthy enough work ethic throughout the year, even when FGC or work took up more of my brain power. It felt great! However it still didnt do enough to help with my real issue of focus. Thankfully a third member of my work sessions really helped me see this and pushed me out of this tech tooling blackhole.
+
+Through her suggestions at the start of fall, I started working on a minigame to take something from my engine and see it through release. The result of that is <a href="https://snkz.itch.io/fishy-voxel-game"> This fishy game. </a> You can view it as a tech demo for my engine but it functions well enough as a standalone arcedy type game. It makes me so happy to be able to say I have something I made from scratch on itch.io. Finally something really indie to my name, playable by anyone.
+
+This technically isnt the first game or even second game I made, but it is the first downloadable project thats available to anyone, and it is the first out this engine so it is a huge milestone for me.
+
+The question now is, whats next for 2025? Will I continue with the medabots rpg? Something small again? 
+
+<br/>
+
+I believe this pattern of one release a year is something I should strive for but I currently dont have any ideas of what to do next. However I know <b>I want to keep this up</b> so i'll make sure to continue this for 2026.
+
+I'm still interested in bringing more people to our groups weekly work sessions, so if you are in the city feel free to reach out, we can keep each other accountable.
+
+Happy New Year!!
