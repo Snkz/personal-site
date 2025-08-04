@@ -12,13 +12,15 @@ links
   <a href="winter2023.html"> winter 2023 </a>
   <a href="spring2024.html"> spring 2024 </a>
   <a href="summer2024.html"> summer 2024 </a>
+  <a href="spring2025.html"> spring 2025 </a>
 
 on the ground
   <del>tdot: bahen center </del>
   <del>brooklyn: outpost  </del>
   <del>sf: another cafe   </del>
   <del>sf: social study   </del>
-  vancouver: waves coffee house
+  <del>vancouver: waves   </del>
+  new west: coasters
   work: relic
 
 on the web 

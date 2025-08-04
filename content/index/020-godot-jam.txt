@@ -5,27 +5,30 @@ The winds are really changing...
 
 Somehow I've managed to go from no publicly playable games to two within months. The feeling is good and plans are already set to maintain this momentum!
 
-The release I am talking about is actually an entry for the game jam: Godot WildJam #78 <a href="https://snkz.itch.io/help-my-program-is-infected-with-cute-viruses-and-they-keep-respawning">Help! My Program Is Infected With Cute Viruses and They Keep Respawning!.</a> A project completed with fellow programmer and amazing artist <a href="https://x.com/itspoff">Poff</a>. Something like this I don't imagine I'd ever have done a year before, both working with someone and working in a prebuilt engine! Most suprisingly, it went amazing. The drive to continue this is strong as well and I'd like to talk a bit why.
+The release I am talking about is actually an entry for the game jam: Godot WildJam #78 <a href="https://snkz.itch.io/help-my-program-is-infected-with-cute-viruses-and-they-keep-respawning">Help! My Program Is Infected With Cute Viruses and They Keep Respawning!.</a> A project completed with fellow programmer and amazing artist <a href="https://x.com/itspoff">Poff</a>. Something like this I don't imagine I'd ever have done a year before, both working with someone and working in a prebuilt engine! Most surprisingly, it went amazing. The drive to continue this is strong as well and I'd like to talk a bit why.
 
-First the obvious, having someone to work with gives a greater sense of accountability. Knowing my work is being waited on or looked at assists with focus. It also adds to the joy, immediately being able to share small successes is good dopamine! Seeing new things come in while we both work helped us race towards our goals. This parternship is something I am looking to maintain going into the future.
+First the obvious, having someone to work with gives a greater sense of accountability. Knowing my work is being waited on or looked at assists with focus. It also adds to the joy, immediately being able to share small successes is good dopamine! Seeing new things come in while we both work helped us race towards our goals. This partnership is something I am looking to maintain going into the future.
 
 Second is GODOT. Holy was this an eye opening experience... The things having a powerful editor can enable ... It's something I must work on in my own engine.
 
-The architecture descisions made by godot were not super imposing. It is NOT an ECS but has a really really straightforward event system. It felt natural to work with even if everything involved looking for explicit building block objects. The equivalent of a main loop is a bit hidden but simple enough to hook into. Working with an inheritence driven design was not really something I was looking forward to, the editor really made it a breeze however.
+The architecture decisions made by godot were not super imposing. It is NOT an ECS but has a really really straightforward event system. It felt natural to work with even if everything involved looking for explicit building block objects. The equivalent of a main loop is a bit hidden but simple enough to hook into. Working with an inheritance-driven design was not really something I was looking forward to, the editor really made it a breeze however.
 
-Working with the engine involed something like creating their entity equivalent, a node, attaching a script and hooking into the "ready" and "process" functions. Accessing the ma loop this way and hacking away. Placing textured objects, collidables etc all by looking for the bespoke node derived class. If one could not be found, you could make due with an attached script and some events.
+Working with the engine involved something like creating their entity equivalent, a node, attaching a script and hooking into the "ready" and "process" functions. Accessing the main loop this way and hacking away. Placing textured objects, collidables etc all by looking for the bespoke node derived class. If one could not be found, you could make due with an attached script and some events.
 
-Their event system required a run-time binds, this is a bit of overhead but let the relationship between listener and reciever stay clear enough. In my ecs engine, this relationship is not as obvious but is bound at compile time. Their editor also surfaced newly defined events to the node which is an awesome touch too.
+Their event system required run-time binds. This is a bit of overhead but let the relationship between listener and receiver stay clear enough. In my ECS engine, this relationship is not as obvious but is bound at compile time. Their editor also surfaced newly defined events to the node which is an awesome touch.
 
-Finally if anything got too confusing or if a derived class functions were not really clear, the godot docs were accessible through the editor. This and the forums online were enough to figure out how to do anything the godot way. It allowed us to mainly focus on the design of the game for our jam, which was the bulk of our headaches.
-<br/>
+Finally if anything got too confusing or if a derived class' functions were not really clear, the godot docs were accessible through the editor. This and the forums online were enough to figure out how to do anything the godot way. It allowed us to mainly focus on the design of the game for our jam, which was the bulk of our headaches.
 
-I think our biggest engine issue was Canvas Layers and how they interacted with cameras and other Canvas Layers. I believe part of our performance issues on non hardware accelerated browsers came from the use of this system too. Canvas Layers forced an indepedant render pass for all its children. This prevents depth sorting across objects in different layers along with issues with following the viewport defined by the camera object. These issues mostly surfaced due to the game design of our match N game but it gave us enough of a headache that we'll be extremly strict with our usage of them next time around...
+I think our biggest engine issue was Canvas Layers and how they interacted with cameras and other Canvas Layers. I believe part of our performance issues on non hardware accelerated browsers came from the use of this system too. Canvas Layers forced an indepedant render pass for all its children. This prevents depth sorting across objects in different layers along with issues with following the viewport defined by the camera object. These issues mostly surfaced due to the game design of our match N game but it gave us enough of a headache that we'll be extremely strict with our usage of them next time around...
 
 <br />
 
-Overall the experience with the engine and the jam went so well that you'll likely be seeing more from us on itch soon. It has given me new drive towards releasing more and more games. At the start of last year this felt like a far off goal, by the end of that year it was achieved and now with this jam I believe its something I should just expect to be doing often.
+Overall the experience with the engine and the jam went so well that you'll likely be seeing more from us on itch soon. It has given me new drive towards releasing more and more games. At the start of last year, this felt like a far off goal. By the end of that year, it was achieved and now with this jam I believe its something I should just expect to be doing often.
+
+<br/>
 
 This does not mean I'm done with my engine, I've actually already started on another small release using it. What it means is I'll be doing more with my time and just have a lot more to show. 
+
+<br/>
 
 <b>So until then! Goodbye!!</b>

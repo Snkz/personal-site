@@ -1,0 +1,40 @@
+Aug 4 2025:
+Resin and 3D Printing
+
+Okay, I am finally feel setup at my new place. It's been so nice having the extra square footage, it's surprisingly good for the mental to have uh doors between spaces!
+However, the extra bedroom has been a big question mark for me since June and I finally found a good use for it (until I'm force to rent it out!)
+
+A MAKER SPACE!
+
+I got into 3D resin printing and oh boy have I learned a ton stumbling through getting the space setup for me to properly print and work with models. The cost is much higher than what appears initially with all the extra tools required. More importantly, staying safe while printing is DIFFICULT. I've already damaged my hands a ton unfortunately but have taken the steps needed to keep myself safe now.
+
+I've also wasted quite a bit of regular gray resin and translucent resin learning the ins and outs of printing. So to help share the learnings, I wanted to post about it.
+
+First off, take a look at my results with <a href="https://x.com/snkz/status/1950623839681179843">translucent</a> and <a href="https://x.com/snkz/status/1952420238651535816">gray</a> resin prints, both showing off quite a few overcome hurdles.
+<br/>
+
+<b>Let me go over gray resin prints first.</b>
+
+The most important thing I've learned is, use supports regardless of the model. Resin printing just like filament printing prints a layer at a time based on specifications supplied. However resin prints are done via a suspended model meaning the initial layers will be floating while other layers are burned on to them after being lowered into the resin pool. This means gravity will affect the prints midway through. If poorly supported or shaped in a way where there are a ton of overhanging layers, things will fall mid print and completely ruining the model and your vat of resin. Supports are needed to keep things stable and thankfully most software for 3D printing can add supports for you automatically.
+
+Second big thing I've run into is that the initial base layer, if is something extremely flat, will have issues when being pulled off the build plate. Try to print your models floating from the base on supports to make things easier, printing on angle (30 degrees or so) is better also to help with gravity.
+
+Finally something that was not super obvious to me initially when printing my <a href="https://x.com/snkz/status/1949272089208197278">voxel models</a> but is obvious in hindsight is that models must be structurally sound and be manifolds. i.e. closed surfaces that are fully connected, no magic vertexes holding everything together and no perfectly 2d planes. For many of the models I have created, I've failed these requirements. For my giovanna print as well, loading in a raw unreal model failed to pass this test and required significant editing of the model to get to work. This can be done programmatically with the right tooling, but it's near impossible to get it done this way without deforming your models significantly. Keep this in mind when crafting your own models are importing game assets. I actually learned a ton about blender through these headaches!
+Gray resin is fun for models you intend to paint in the future, which is its own set of hurdles that I can hopefully talk more about later as I get good at it but for now...
+<br/>
+
+<b>Translucent resin hurdles!!</b>
+
+Here the post processing steps after printing are extremely important. Normally for gray resin prints, washing it in pure alcohol and curing it under a UV light is sufficient but for translucent resin, the alcohol and quality of resin is extremely important as both will automatically turn your clear resin into a nasty yellow colour. The process of yellowing is hard to counteract but from what I've tested, there's two options here.
+
+First, dyeing the resin blue or any other dye ahead of time is best. As I did with the cubone print, blue is a great choice as it completely hides the yellowing effect. However that is not enough. With all translucent prints, sanding is required. Take the time to grab 400 to 3000 grain sand paper and go over as much of the model as possible. Once each grade of sanding is completed, finishing off at your highest grade. Wash it again and prepare it for a coat of clear gloss paint. The paint will give it a near perfect clear look, allowing the foggy translucent resin to appear clear. The process takes so much effort but it's been the only way I've gotten good results.
+
+The second more expensive option is to buy high clear resin. Sanding is no longer required but still yields better results. With high clear resin however we get a new option to also apply. After initially washing and curing for a short time, we can paint on a thin layer of more high clear resin, sealing in the model with a shiny coat of the stuff and once again curing it. This gives it the same look as it had before you washed the model, a near perfect translucent affect.
+
+I'd love to post the results of the translucent prints but I uh, used some very degen models for this process (they were the best free ones online!!!) so I'll avoid posting for now. I've been having so much fun finding and making models to print that I am tempted to turn it into a business. I'm sure there's a niche I can tap into here.
+
+<br/>
+
+I'll post about my tower defence game progress soon, but in the meantime, if you are interested in some models (maybe something more sus even...)  and are in the vancouver area let me know!
+
+<b>WEAR A RESPIRATOR MASK AND GLOVES AT ALL TIMES BTW</b>
