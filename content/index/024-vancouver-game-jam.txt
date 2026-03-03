@@ -1,0 +1,14 @@
+Mar 2 2026:
+New Year, New Game, New Me
+
+Another year around the sun, what an adventurous time. The new year always fills me with new ambition and this time that ambition took me to Vietnam! What a humbling experience, taking the Ha Giang Loop on motorcycle was so incredibly breathtaking. Meeting the locals and fellow tourist reminded me of what I need the most this year. I need to... STRUGGLE!
+
+Yes you read that right, my new years goal is to struggle more. Apparently its apart of their culture, but viewing life as the moments where I struggle the most is a helpful framework and it really showed in how much the locals are doing day in and day out. The variety of people I met around the Hanoi and in the mountain villages stuck with me, how they live their life, how they spend their free time, how much energy they had. I will take a portion of that with me into my work and my life as well.
+
+Speaking of work. I participated in the Vancouver Global Game Jam! My social skills were not up to cut unfortunately so I ended up starting the project solo. Thankfully an artist showed interest and joined in on my project. I built the Kirby Quick Draw game essentially for mobile in about a day and a half. Once again in Godot! I'm grateful that it worked out so well and is so easily demo-able. My learnings from my previous Godot Jam really carried me and I understand now the best thing I can do is aim to have something polished and easily playable. This portrait layout on mobile I think is a format I'd like to reproduce more.
+
+Please check it out, its multiplayer but you can play vs yourself if you want <a href="https://snkz.itch.io/mask-off">Mask OFF</a>. I was able to reuse assets im building for my STILL IN DEVELOPEMENT tower defense game. Was nice to be try rendering those characters out in a new format.
+
+With this, I've maintained my goal of producing a game a year. I'm hoping to do another game jam this year and I will do my best to build it with a team. It will be a <i>struggle</i> to work with others for me but I know its important, so I will try.
+<br/>
+<strong>Until Next Time...</strong>
