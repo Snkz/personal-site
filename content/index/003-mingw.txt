@@ -1,4 +1,4 @@
-July 29 2015:
+July 29 2015
 Cross compilation with mingw
 
 So first, I'd like start out by thanking all the compiler people out there. Honestly, you don't get enough love. You're all the best.

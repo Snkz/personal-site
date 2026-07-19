@@ -191,6 +191,27 @@ cat <<- _EOF_ > $generated_path/$page.html
 _EOF_
 }
 
+generate_feed() {
+if [ -f "${generated_path}/feed.xml" ]; then
+  echo "feed.xml already exists in $generated_path";
+  mv "${generated_path}/feed.xml" "${generated_path}/feed.xml.old";
+fi
+echo "Creating $generated_path/feed.xml...";
+cat <<- _EOF_ > $generated_path/feed.xml
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>${header}</title>
+  <subtitle>${sub_header}</subtitle>
+  <link href="http://abdi.dahir.ca/feed/" rel="self" />
+  <link href="http://abdi.dahir.ca/" />
+  <id>urn:uuid:$(uuidgen)</id>
+  <updated>$(date -d "" +'%Y-%m-%dT%H:%M:%S%:z')</updated>
+  ${rss_data} 
+</feed>
+_EOF_
+}
+
+
 if [ ! -z "$first_arg" ]; then
   usage
   exit;
@@ -276,8 +297,6 @@ do
   export sub_header=${header_content[2]}
 
   header_data=`envsubst < "$template/header.ini"`
-  export header=""
-  export sub_header=""
 
   echo " >>> Blurb..."
   blurb_data=""
@@ -314,6 +333,7 @@ do
 
   echo " >>> Blog..."
   blog_data=""
+  rss_data=""
   #sorted_dir=$(echo ${dir}* | xargs -n1 | sort | xargs)
   sorted_dir=$(echo ${dir}*)
   for file in ${sorted_dir}
@@ -329,15 +349,20 @@ do
 
     blog_offset=0
     export blog_date=""
+    export blog_date_rfc=$(date -d "" +'%Y-%m-%dT%H:%M:%S%:z')
     export blog_header=""
+    export blog_uuid=$(uuidgen)
     if [ -z "${blog_content[0]}" ]; then
       blog_offset=1
     elif [ ! -z "${blog_content[1]}" ]; then
       blog_offset=3
       export blog_date="${blog_content[0]}"
+      export blog_date_rfc=$(date -d "${blog_content[0]}" +'%Y-%m-%dT%H:%M:%S%:z')
       export blog_header="${blog_content[1]}"
+      export blog_header_spaceless="${blog_header// /%20}"
     else
       blog_offset=2
+      export blog_date_rfc=$(date -d "${blog_content[0]}" +'%Y-%m-%dT%H:%M:%S%:z')
       export blog_date="${blog_content[0]}"
     fi
     blog_text=""
@@ -355,10 +380,16 @@ do
     done
     blog_result=`envsubst < "$template/blog.ini"` 
     blog_data="$blog_result $blog_data"
+    rss_result=`envsubst < "$template/feed.ini"` 
+    rss_data="$rss_result
+    $rss_data"
   done
 
   echo "Page: [$page]"
   generate_page
+  if [ $page == "index" ]; then
+    generate_feed
+  fi
 done
 
 exit 0

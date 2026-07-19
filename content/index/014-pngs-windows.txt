@@ -1,4 +1,4 @@
-Feb 4 2024:
+Feb 4 2024
 PNG to texture
 
 I looked into getting png loads and finally managed to get some stuff done for it.

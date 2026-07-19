@@ -1,4 +1,4 @@
-Nov 18 2023:
+Nov 18 2023
 Depth and Effects
 
 Recently I did some work on my effects system and produced this:<a class="special" href="">a fake rimlight and trail effect when dashing</a>. I'd like to talk a bit about what I did to get that up.

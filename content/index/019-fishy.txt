@@ -1,4 +1,4 @@
-Dec 31 2024:
+Dec 31 2024
 Year End and Fishy game
 
 I've finally put something out! A little fishing game built with the tools and engine I've been building for like 10 years.

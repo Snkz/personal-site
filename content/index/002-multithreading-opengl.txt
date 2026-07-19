@@ -1,4 +1,4 @@
-July 16 2015:
+July 16 2015
 Multithreading in OpenGL
 
 So whenever I read posts by voxel engine writters that list features they've implemented, Multithreading is almost always listed as a simple bullet point. They then go on to talk about meshing problems, LOD etc. There's very little discussion on how they implented it. I'm gonna try to change that cause damn does it ever suck to multithread code with OpenGL being single thread only. 

@@ -91,7 +91,7 @@ for file in $generated/*
 do
   page=${file%*/}
   page=${page##*/}
-  if [[ $page == *".html" ]]; then
+  if [[ $page == *".html" || $page == *".xml" ]]; then
     echo "SCP [$page] to [$server:$destination] ..."
     #mv "${file}" "${destination}/${page}";
     #scp "${file}" "${username}@${server}:${destination}/${page}";

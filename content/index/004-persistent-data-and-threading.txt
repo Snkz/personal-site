@@ -1,5 +1,5 @@
-January 3 2016:
-Persistent Data && Threading Opts
+January 3 2016
+Persistent Data and Threading Opts
 
 So as you may of noticed, I took a bit of a break due to the new job. Work is exciting and consuming 110% of my time but since I've been on break, I obviously took the time to tackle more of the game.
 
@@ -17,7 +17,7 @@ The synchronization between the update calls and the read/write calls was mostly
                   
 Thanks to SDL's <span class="code inline">SDL_GetPrefPath(orgname, dirname)</span> function, there was very little os specific code necessary.That call provided the correct directory to write to, the only extra work was making a safe mkdir call which I did like so.
 
-<p class="code">int mkdir_safe(const char* path) {<br/>#ifdef __linux__<br/>&nbsp;&nbsp;return mkdir(path, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);<br/>#else<br/>&nbsp;&nbsp;return mkdir(path);<br/>#endif<br/>}</p>
+<p class="code">int mkdir_safe(const char* path) {</p><p class="code">#ifdef __linux__</p><p class="code">  return mkdir(path, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);</p><p class="code">#else</p><p class="code">    return mkdir(path);</p><p class="code">#endif</p><p class="code">}</p>
 
 Please excuse the laziness, ideally the #ifdef would be defined for windows and default to the posix mkdir call, however I did not want to enumerate the possible windows/windows compiler flags
 

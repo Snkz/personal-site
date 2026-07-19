@@ -1,4 +1,4 @@
-December 26 2022:
+December 26 2022
 Site Maintenance and Tooling
 
 I'm writing this late into the night, after finally completing it. At the request of my sister i've written tooling to generate blog posts based on what I've done here. After writing the scripts I did the slow tedious work of migrating everything I've written so far on this site to be generated using the new tooling. You can check out the project here <a href="https://github.com/Snkz/basic-site-template">on my github</a>. Its simply a pair of bash scripts that takes text files and applies html templates to them to generate webpages. The sidebar and header are templated out, the contents of these sections are written once and applied to every "blog" entry found in the content directory. After the pages are all spit out, another script gets run that moves it all over to the webserver im running this on.
