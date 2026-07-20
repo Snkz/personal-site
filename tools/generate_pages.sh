@@ -348,6 +348,7 @@ do
     done < "$blog_path"
 
     blog_offset=0
+    export blog_intro=""
     export blog_date=""
     export blog_date_rfc=$(date -d "" +'%Y-%m-%dT%H:%M:%S%:z')
     export blog_header=""
@@ -373,11 +374,16 @@ do
       elif [ $blog_offset == 2 ]; then
         export blog_text+="<p class=\"special\">"${blog_content[$i]}"</p>"
       elif [ $blog_offset == 3 ]; then
+        if [[ -z $blog_intro ]]; then
+          blog_intro=${blog_content[$i]}
+        fi
+
         export blog_text+="<p>"${blog_content[$i]}"</p>"
       else
         blog_formatting_error
       fi
     done
+
     blog_result=`envsubst < "$template/blog.ini"` 
     blog_data="$blog_result $blog_data"
     rss_result=`envsubst < "$template/feed.ini"` 
