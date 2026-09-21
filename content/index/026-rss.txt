@@ -1,0 +1,6 @@
+July 19 2026
+RSS
+
+Reading <a href="https://www.neatnik.net/hardcore-indieweb">this call to action</a> by the IndieWebCamp on self hosting and better distribution I've finally added RSS support to my personal site. I've updated my site tooling scripts <a href="https://github.com/Snkz/basic-site-template">which I've made public here</a> to automatically generate a feed.xml matching the atom format for rss along with the rest of this site.
+
+I hope this allows me to reach a few more people

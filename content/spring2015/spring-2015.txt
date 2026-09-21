@@ -1,4 +1,4 @@
-Spring 2015:
+Spring 2015
 
 <a href="http://kripken.github.io/emscripten-site/">Port opengl to webgl. This voodoo somehow ... works.</a>
 <a href="http://abdi.dahir.ca/breakblox.html">See my voxel engine ported to the web thanks to emscripten.</a>

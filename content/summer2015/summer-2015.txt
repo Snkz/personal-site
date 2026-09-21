@@ -1,4 +1,4 @@
-Summer 2015:
+Summer 2015
 
 <a href="index.html">I intend to start blogging .. i guess i'll need a way to update content without messing with HTML now</a>
 <a href="https://nicolasgoles.com/blog/2013/01/lua-tutorial-c-bindings/">Light overview on C Lua bindings. Its real easy</a>

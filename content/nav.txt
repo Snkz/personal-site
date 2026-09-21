@@ -13,6 +13,7 @@ links
   <a href="spring2024.html"> spring 2024 </a>
   <a href="summer2024.html"> summer 2024 </a>
   <a href="spring2025.html"> spring 2025 </a>
+  <a href="summer2026.html"> summer 2026 </a>
 
 on the ground
   <del>tdot: bahen center </del>
@@ -20,10 +21,11 @@ on the ground
   <del>sf: another cafe   </del>
   <del>sf: social study   </del>
   <del>vancouver: waves   </del>
-  new west: flavor balance 
+  new west: afterhours
   work: relic
 
 on the web 
   <a href = "https://github.com/snkz">  github.com/snkz </a>
   <a href = "https://twitter.com/snkz"> twitter.com/snkz </a>
-  <a href="mailto:abdi.dahir@outlook">  abdi.dahir@outlook.com </a>
+  <a href = "https://cults3d.com/en/users/snkz/makes"> cults3d.com/snkz </a>
+  <a href = "mailto:abdi.dahir@outlook">  abdi.dahir@outlook.com </a>

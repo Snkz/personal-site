@@ -1,4 +1,4 @@
-Winter 2014:
+Winter 2014
 
 <a href="http://www-cs-students.stanford.edu/~amitp/game-programming/polygon-map-generation/">I want to do this, what a gorgeous map.</a>
 <a href="http://www.cs.utah.edu/~elb/folklore/mel.html">Story of /the/ real programmer, classic.</a>

@@ -1,4 +1,4 @@
-Fall 2014:
+Fall 2014
 
 <a href="https://learn.adafruit.com/freq-show-raspberry-pi-rtl-sdr-scanner/overview">RPI as radio tuner.</a>
 <a href="https://npmjs.org/package/mongoose-rollback">My rollback machine for mongoose, really need people to break it.</a>

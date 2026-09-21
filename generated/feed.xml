@@ -4,12 +4,29 @@
   <subtitle>My sense of design is mine, therefore it is good</subtitle>
   <link href="http://abdi.dahir.ca/feed/" rel="self" />
   <link href="http://abdi.dahir.ca/" />
-  <id>urn:uuid:a65128ec-5e2f-4f58-b995-4aaf1744a056</id>
-  <updated>2026-07-19T00:00:00-07:00</updated>
+  <id>urn:uuid:689d9f51-3071-4be9-be50-3f6f3b799918</id>
+  <updated>2026-09-21T00:00:00-07:00</updated>
   <entry>
+	<title>RSS</title>
+	<link href="http://abdi.dahir.ca/#RSS" />
+  <id>urn:uuid:63ec81f4-4753-4abc-894e-f96518be3658</id>
+  <published>2026-07-19T00:00:00-07:00</published>
+  <updated>2026-07-19T00:00:00-07:00</updated>
+	<summary>Reading <a href="https://www.neatnik.net/hardcore-indieweb">this call to action</a> by the IndieWebCamp on self hosting and better distribution I've finally added RSS support to my personal site. I've updated my site tooling scripts <a href="https://github.com/Snkz/basic-site-template">which I've made public here</a> to automatically generate a feed.xml matching the atom format for rss along with the rest of this site.</summary>
+	<content type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+      <p>Reading <a href="https://www.neatnik.net/hardcore-indieweb">this call to action</a> by the IndieWebCamp on self hosting and better distribution I've finally added RSS support to my personal site. I've updated my site tooling scripts <a href="https://github.com/Snkz/basic-site-template">which I've made public here</a> to automatically generate a feed.xml matching the atom format for rss along with the rest of this site.</p><p></p><p>I hope this allows me to reach a few more people</p><p></p>
+		</div>
+	</content>
+	<author>
+		<name>Abdi Dahir</name>
+		<email>abdi.dahir@outlook.com</email>
+	</author>
+</entry>
+    <entry>
 	<title>Get in the Car</title>
 	<link href="http://abdi.dahir.ca/#Get%20in%20the%20Car" />
-  <id>urn:uuid:d948e932-2244-4fb7-94d7-bd7429adc6fb</id>
+  <id>urn:uuid:1deb8806-d2b4-44b6-b0a1-2e93529a9be2</id>
   <published>2026-05-18T00:00:00-07:00</published>
   <updated>2026-05-18T00:00:00-07:00</updated>
 	<summary>With my recent move, I've been in more and more scenarios where my motorcycle has just been insufficient for getting around. Needing to carry so many larger items or just needing to run errands in poorer weather conditions made it so I've been relying more and more on car having friends. I think up until this year I've essentially always lived in a "downtown" of some kind. The kinda of areas where having a car ment paying hundreds a month for parking and driving on difficult and narrow roads. Motorcycling around was just optimal and significantly cheaper. Living somewhere just a bit closer to suburbia now made it make sense for me to start using car shares, so these last few weeks I have. Having only driven a bike since highschool, spending a total of maybe 4 hours behind a wheel, adjusting to managing a car has been a really unique experience.. I wanted to write about it...</summary>
@@ -26,7 +43,7 @@
     <entry>
 	<title>New Year, New Game, New Me</title>
 	<link href="http://abdi.dahir.ca/#New%20Year,%20New%20Game,%20New%20Me" />
-  <id>urn:uuid:abc6a297-002f-44fc-9e85-0064496a0da8</id>
+  <id>urn:uuid:51124cf4-5042-48aa-9849-dba6c6b50a8a</id>
   <published>2026-03-02T00:00:00-08:00</published>
   <updated>2026-03-02T00:00:00-08:00</updated>
 	<summary>Another year around the sun, what an adventurous time. The new year always fills me with new ambition and this time that ambition took me to Vietnam! What a humbling experience, taking the Ha Giang Loop on motorcycle was so incredibly breathtaking. Meeting the locals and fellow tourist reminded me of what I need the most this year. I need to... STRUGGLE!</summary>
@@ -43,7 +60,7 @@
     <entry>
 	<title>Work Anniversary</title>
 	<link href="http://abdi.dahir.ca/#Work%20Anniversary" />
-  <id>urn:uuid:f5b92bcd-d005-4f85-baa1-d54c6c7650f7</id>
+  <id>urn:uuid:0197388b-fea1-44f0-b763-faa41c76a00f</id>
   <published>2025-10-15T00:00:00-07:00</published>
   <updated>2025-10-15T00:00:00-07:00</updated>
 	<summary>As of October 1st this year, I have officially been working professionally for <i>10 years</i> in games!</summary>
@@ -60,7 +77,7 @@
     <entry>
 	<title>Resin and 3D Printing</title>
 	<link href="http://abdi.dahir.ca/#Resin%20and%203D%20Printing" />
-  <id>urn:uuid:5ae15121-e3e4-449b-a5bd-7fe6ec1e3bae</id>
+  <id>urn:uuid:e42865bd-f969-4ea1-a157-e1fcf7efe82b</id>
   <published>2025-08-04T00:00:00-07:00</published>
   <updated>2025-08-04T00:00:00-07:00</updated>
 	<summary>Okay, I am finally feel setup at my new place. It's been so nice having the extra square footage, it's surprisingly good for the mental to have uh doors between spaces!</summary>
@@ -77,7 +94,7 @@
     <entry>
 	<title>Property and adjustments</title>
 	<link href="http://abdi.dahir.ca/#Property%20and%20adjustments" />
-  <id>urn:uuid:42df5864-41c5-4941-a813-0398917198b4</id>
+  <id>urn:uuid:0709c5a9-d038-4b91-8c0b-b5fc37b726ee</id>
   <published>2025-04-28T00:00:00-07:00</published>
   <updated>2025-04-28T00:00:00-07:00</updated>
 	<summary>I am crossing a new but terrifiying milestone ... I am now a property owner!</summary>
@@ -94,7 +111,7 @@
     <entry>
 	<title>Godot and Game Jams</title>
 	<link href="http://abdi.dahir.ca/#Godot%20and%20Game%20Jams" />
-  <id>urn:uuid:ebe75967-64b7-4cc6-94c1-71dbe641f6b1</id>
+  <id>urn:uuid:dd1380c3-686c-4e91-a097-09c17d1f7ab3</id>
   <published>2025-03-13T00:00:00-07:00</published>
   <updated>2025-03-13T00:00:00-07:00</updated>
 	<summary>The winds are really changing...</summary>
@@ -111,7 +128,7 @@
     <entry>
 	<title>Year End and Fishy game</title>
 	<link href="http://abdi.dahir.ca/#Year%20End%20and%20Fishy%20game" />
-  <id>urn:uuid:2e2095f4-2d92-4f1b-89b2-30bd76de79ee</id>
+  <id>urn:uuid:422dfba3-2077-41cd-abc6-f6dc35b8b6e7</id>
   <published>2024-12-31T00:00:00-08:00</published>
   <updated>2024-12-31T00:00:00-08:00</updated>
 	<summary>I've finally put something out! A little fishing game built with the tools and engine I've been building for like 10 years.</summary>
@@ -128,7 +145,7 @@
     <entry>
 	<title>RTS and me</title>
 	<link href="http://abdi.dahir.ca/#RTS%20and%20me" />
-  <id>urn:uuid:e0679c0a-5463-4413-bab9-ea56694ed4a7</id>
+  <id>urn:uuid:24895372-4d41-4d88-b297-3b43bffc8239</id>
   <published>2024-09-29T00:00:00-07:00</published>
   <updated>2024-09-29T00:00:00-07:00</updated>
 	<summary>I generally avoid talking about my professional life here. Mostly because I'd like to define myself by the work I do on my free time. However with how the industry has been going and some recent success with my work I've had a change of heart. It's about 10 years of professional game devolpement for me and about 8 of those years are on RTS. An incredibly rare work history in my opinion, even amoung game developers. So why not share some experiences?</summary>
@@ -145,7 +162,7 @@
     <entry>
 	<title>Texture3D, texture atlases and billboards in opengl 2 and glsl 130.</title>
 	<link href="http://abdi.dahir.ca/#Texture3D,%20texture%20atlases%20and%20billboards%20in%20opengl%202%20and%20glsl%20130." />
-  <id>urn:uuid:942102f2-aaa2-4995-a306-116b4488d045</id>
+  <id>urn:uuid:c18d6680-1fa9-47ec-818a-2c89e87dd79d</id>
   <published>2024-08-05T00:00:00-07:00</published>
   <updated>2024-08-05T00:00:00-07:00</updated>
 	<summary>After a few weeks of work, i've been able to succesfully load various png types as textures. This includes the glsl side support for variable number of textures!</summary>
@@ -162,7 +179,7 @@
     <entry>
 	<title>Winds of change!</title>
 	<link href="http://abdi.dahir.ca/#Winds%20of%20change!" />
-  <id>urn:uuid:df145a81-204e-4875-bfec-92b5b0727d79</id>
+  <id>urn:uuid:bb558a72-b6ce-4bf9-9c3e-6a8df14d9245</id>
   <published>2024-05-27T00:00:00-07:00</published>
   <updated>2024-05-27T00:00:00-07:00</updated>
 	<summary>Almost half way through the year, can you beleive it!</summary>
@@ -179,7 +196,7 @@
     <entry>
 	<title>Creative power</title>
 	<link href="http://abdi.dahir.ca/#Creative%20power" />
-  <id>urn:uuid:3b5edcc2-8753-432a-9fb7-6cc04c8b65c1</id>
+  <id>urn:uuid:706067a0-5a5e-495f-9c2f-3d5fe2670c1a</id>
   <published>2024-04-01T00:00:00-07:00</published>
   <updated>2024-04-01T00:00:00-07:00</updated>
 	<summary>Short one to vent... creativity is difficult. Voxel art is a limiting media and even here the space feels too large. I am extremly grateful for the work of others as the art I see online has been a consistent source of inspiration for what elements to add to a scene, for how to colour a character and what the models should look like.</summary>
@@ -196,7 +213,7 @@
     <entry>
 	<title>PNG to texture</title>
 	<link href="http://abdi.dahir.ca/#PNG%20to%20texture" />
-  <id>urn:uuid:ad8c6934-21fb-450d-89bb-6b686e9b73ec</id>
+  <id>urn:uuid:c9bc7f24-493f-4a17-8e15-79005497a880</id>
   <published>2024-02-04T00:00:00-08:00</published>
   <updated>2024-02-04T00:00:00-08:00</updated>
 	<summary>I looked into getting png loads and finally managed to get some stuff done for it.</summary>
@@ -213,7 +230,7 @@
     <entry>
 	<title>Year End and Community Power</title>
 	<link href="http://abdi.dahir.ca/#Year%20End%20and%20Community%20Power" />
-  <id>urn:uuid:8655236c-bd7b-46fb-9f70-6215ae33bf82</id>
+  <id>urn:uuid:1ea03bbc-9997-4fae-8e27-0aa1487133a3</id>
   <published>2023-12-03T00:00:00-08:00</published>
   <updated>2023-12-03T00:00:00-08:00</updated>
 	<summary>It is that time of year again to reflect and look towards the future. Where is the game at!!!</summary>
@@ -230,7 +247,7 @@
     <entry>
 	<title>Depth and Effects</title>
 	<link href="http://abdi.dahir.ca/#Depth%20and%20Effects" />
-  <id>urn:uuid:e6010585-8dbb-4a87-a79e-784184cfef17</id>
+  <id>urn:uuid:7d98ad55-feb6-46b9-a8b2-755553fc1e99</id>
   <published>2023-11-18T00:00:00-08:00</published>
   <updated>2023-11-18T00:00:00-08:00</updated>
 	<summary>Recently I did some work on my effects system and produced this:<a class="special" href="">a fake rimlight and trail effect when dashing</a>. I'd like to talk a bit about what I did to get that up.</summary>
@@ -247,7 +264,7 @@
     <entry>
 	<title>Minor Update</title>
 	<link href="http://abdi.dahir.ca/#Minor%20Update" />
-  <id>urn:uuid:68fe6e41-9d70-4cc2-98d6-f6cb4eb71568</id>
+  <id>urn:uuid:96487254-8334-4aff-80e6-249445a7dff4</id>
   <published>2023-08-21T00:00:00-07:00</published>
   <updated>2023-08-21T00:00:00-07:00</updated>
 	<summary>I'm glad no one held their breath!</summary>
@@ -264,7 +281,7 @@
     <entry>
 	<title>Site Maintenance and Tooling</title>
 	<link href="http://abdi.dahir.ca/#Site%20Maintenance%20and%20Tooling" />
-  <id>urn:uuid:9f7b0927-2265-4cc0-8fe4-d7d247a23146</id>
+  <id>urn:uuid:5162e334-b751-4346-b924-20ab3c7737dd</id>
   <published>2022-12-26T00:00:00-08:00</published>
   <updated>2022-12-26T00:00:00-08:00</updated>
 	<summary>I'm writing this late into the night, after finally completing it. At the request of my sister i've written tooling to generate blog posts based on what I've done here. After writing the scripts I did the slow tedious work of migrating everything I've written so far on this site to be generated using the new tooling. You can check out the project here <a href="https://github.com/Snkz/basic-site-template">on my github</a>. Its simply a pair of bash scripts that takes text files and applies html templates to them to generate webpages. The sidebar and header are templated out, the contents of these sections are written once and applied to every "blog" entry found in the content directory. After the pages are all spit out, another script gets run that moves it all over to the webserver im running this on.</summary>
@@ -281,7 +298,7 @@
     <entry>
 	<title>Learning to polish</title>
 	<link href="http://abdi.dahir.ca/#Learning%20to%20polish" />
-  <id>urn:uuid:9e2bf48f-b0cf-4f4f-89b0-c4b388534ae2</id>
+  <id>urn:uuid:3a6900ff-684e-4769-bf6f-d8719fb939ea</id>
   <published>2022-01-08T00:00:00-08:00</published>
   <updated>2022-01-08T00:00:00-08:00</updated>
 	<summary>I'm not apologizing, I'll just try to do better then yesterday with how often I write.</summary>
@@ -298,7 +315,7 @@
     <entry>
 	<title>Getting back to blogging</title>
 	<link href="http://abdi.dahir.ca/#Getting%20back%20to%20blogging" />
-  <id>urn:uuid:972a1a41-79b3-4db0-8fab-1ab17f62aff5</id>
+  <id>urn:uuid:671cb5b6-068d-4ce4-bb2f-07d675b39ec1</id>
   <published>2021-06-09T00:00:00-07:00</published>
   <updated>2021-06-09T00:00:00-07:00</updated>
 	<summary>Hello yes this site is still active ...</summary>
@@ -315,7 +332,7 @@
     <entry>
 	<title>Improved engine and new flames</title>
 	<link href="http://abdi.dahir.ca/#Improved%20engine%20and%20new%20flames" />
-  <id>urn:uuid:073ab6e4-5305-4419-bc15-a241dcdae63f</id>
+  <id>urn:uuid:2e8b9554-a1c5-4dbf-88fd-652e6072d689</id>
   <published>2017-12-17T00:00:00-08:00</published>
   <updated>2017-12-17T00:00:00-08:00</updated>
 	<summary>It's been a crazy year, I've moved to Vancouver, jumped jobs twice and am more deadset then ever on building this thing out</summary>
@@ -332,7 +349,7 @@
     <entry>
 	<title>UI and text rendering woes</title>
 	<link href="http://abdi.dahir.ca/#UI%20and%20text%20rendering%20woes" />
-  <id>urn:uuid:80766a42-5e56-4be1-9756-970a8064c9d4</id>
+  <id>urn:uuid:5292e8ef-ae58-4406-bc60-0d479aaf9fff</id>
   <published>2016-04-30T00:00:00-07:00</published>
   <updated>2016-04-30T00:00:00-07:00</updated>
 	<summary><strong>Work work work,</strong>  but I've made some time to look at the engine a bit more.</summary>
@@ -349,7 +366,7 @@
     <entry>
 	<title>Persistent Data and Threading Opts</title>
 	<link href="http://abdi.dahir.ca/#Persistent%20Data%20and%20Threading%20Opts" />
-  <id>urn:uuid:2800a38e-b82b-4fc8-ba91-01347ec8a944</id>
+  <id>urn:uuid:fc3d032c-218d-4424-9a6f-13a1646c96be</id>
   <published>2016-01-03T00:00:00-08:00</published>
   <updated>2016-01-03T00:00:00-08:00</updated>
 	<summary>So as you may of noticed, I took a bit of a break due to the new job. Work is exciting and consuming 110% of my time but since I've been on break, I obviously took the time to tackle more of the game.</summary>
@@ -366,7 +383,7 @@
     <entry>
 	<title>Cross compilation with mingw</title>
 	<link href="http://abdi.dahir.ca/#Cross%20compilation%20with%20mingw" />
-  <id>urn:uuid:3ee30c1c-04b9-4f2e-a342-1ee4fbe8d746</id>
+  <id>urn:uuid:36af87fc-ec7c-4d28-9301-b987249de5fe</id>
   <published>2015-07-29T00:00:00-07:00</published>
   <updated>2015-07-29T00:00:00-07:00</updated>
 	<summary>So first, I'd like start out by thanking all the compiler people out there. Honestly, you don't get enough love. You're all the best.</summary>
@@ -383,7 +400,7 @@
     <entry>
 	<title>Multithreading in OpenGL</title>
 	<link href="http://abdi.dahir.ca/#Multithreading%20in%20OpenGL" />
-  <id>urn:uuid:9d7c0358-60ca-4f46-b0d0-6fe81967907d</id>
+  <id>urn:uuid:bd826048-3348-42e8-88c7-9ee5575505e6</id>
   <published>2015-07-16T00:00:00-07:00</published>
   <updated>2015-07-16T00:00:00-07:00</updated>
 	<summary>So whenever I read posts by voxel engine writters that list features they've implemented, Multithreading is almost always listed as a simple bullet point. They then go on to talk about meshing problems, LOD etc. There's very little discussion on how they implented it. I'm gonna try to change that cause damn does it ever suck to multithread code with OpenGL being single thread only.</summary>
@@ -400,7 +417,7 @@
     <entry>
 	<title>Voxel Segmentation</title>
 	<link href="http://abdi.dahir.ca/#Voxel%20Segmentation" />
-  <id>urn:uuid:f9e4314f-3b16-4f16-8775-ae57e050d402</id>
+  <id>urn:uuid:7ad646ea-ffb5-420d-8d6a-51ddb8e55b61</id>
   <published>2015-07-10T00:00:00-07:00</published>
   <updated>2015-07-10T00:00:00-07:00</updated>
 	<summary>I've been working on how enemies should be fought in my game and I've decided that in order to best take advantage of the engine, enemies should die by being broken apart. i.e whenever an enemies body becomes disjoint, all or one disjoint set of their body should be destroyed. Sounds fun buuuut its been a pain getting in order. This post will discuss what I've learned about set segmentation for voxel data.</summary>
@@ -417,7 +434,7 @@
     <entry>
 	<title>It begins...</title>
 	<link href="http://abdi.dahir.ca/#It%20begins..." />
-  <id>urn:uuid:e605792a-2999-4faf-a0a8-b46e86ef9f81</id>
+  <id>urn:uuid:e1cfa2de-4c5f-46d8-8cda-06e21cfd9998</id>
   <published>2015-06-28T00:00:00-07:00</published>
   <updated>2015-06-28T00:00:00-07:00</updated>
 	<summary>So I've started working on my third attempt to make a game outof my voxel engine. I believe in this one alot so I'm going to start documenting some of its developement.</summary>
